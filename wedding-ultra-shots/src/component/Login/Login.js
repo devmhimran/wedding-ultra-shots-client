@@ -1,5 +1,6 @@
 import React from 'react';
-import './Login.css'
+import './Login.css';
+import { BsGoogle } from 'react-icons/bs';
 
 const Login = () => {
     return (
@@ -24,8 +25,11 @@ const Login = () => {
                             </div>
                             <div className="divider  d-flex justify-content-center align-items-center py-3">
                                 <span></span>
-                                <p className='mx-4'>or</p>
+                                    <p className='mx-4'>or</p>
                                 <span></span>
+                            </div>
+                            <div className="input__form">
+                                <button className='signin__button w-100'><BsGoogle></BsGoogle> <span>Google</span></button>
                             </div>
                         </form>
                     </div>
