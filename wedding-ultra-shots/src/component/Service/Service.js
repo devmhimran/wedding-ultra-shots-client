@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ServiceModal from '../ServiceModal/ServiceModal';
 import './Service.css'
 
 const Service = (props) => {
     const {id, name, image, price} = props.service;
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
     const navigate = useNavigate();
     const navigateTodetail = (id) => {
       navigate(`/service/${id}`);
@@ -26,7 +22,6 @@ const Service = (props) => {
                     </div>
                     <div className="service__detail__button d-flex justify-content-between">
                         <button className='detail__button' onClick={()=>navigateTodetail(id)}>Book Now</button>
-                        <ServiceModal key={id} handleClose={handleClose} show={show} detail={props.service}></ServiceModal>
                     </div>
                 </div>
             </div>

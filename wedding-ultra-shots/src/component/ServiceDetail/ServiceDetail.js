@@ -5,7 +5,6 @@ import ServiceDetailComponent from '../ServiceDetailComponent/ServiceDetailCompo
 
 const ServiceDetail = () => {
     const {serviceDetail} = useParams();
-    const [serviceSingleDetail, setServiceSingleDetail] = useState([]);
     const [services, setServices] = useService([]);
     let serviceSaveData = [];
     const servicesData = services.find(serviceData => serviceData.id === serviceDetail);
