@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './main-site.css';
 import HeaderNav from './component/HeaderNav/HeaderNav';
 import { Route, Router, Routes } from 'react-router-dom';
 import Home from './component/Home/Home';
@@ -9,7 +9,7 @@ import Blogs from './component/Blogs/Blogs';
 
 function App() {
   return (
-    <div className="App">
+    <div className="main__site">
       <HeaderNav></HeaderNav>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
