@@ -20,29 +20,29 @@ const Banner = () => {
                     <h1>Welcome to <br /> Wedding <br /> Ultrashots</h1>
                 </div>
             </div>
-            <Carousel activeIndex={index} onSelect={handleSelect}>
-                <Carousel.Item>
+            <Carousel activeIndex={index} onSelect={handleSelect}  fade>
+                <Carousel.Item interval={900}>
                     <img
                         className="d-block w-100 banner__img"
                         src={Banner1}
                         alt="First slide"
                     />
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item  interval={900}>
                     <img
                         className="d-block w-100 banner__img"
                         src={Banner2}
                         alt="First slide"
                     />
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item  interval={900}>
                     <img
                         className="d-block w-100 banner__img"
                         src={Banner3}
                         alt="First slide"
                     />
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item  interval={900}>
                     <img
                         className="d-block w-100 banner__img"
                         src={Banner4}
