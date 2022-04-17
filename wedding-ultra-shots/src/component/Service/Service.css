@@ -1,0 +1,30 @@
+.service__card{
+    border-radius: 25px !important;
+    font-family: 'Raleway', sans-serif;
+}
+.service__img{
+    width: 100%;
+    border-radius: 15px ;
+}
+.service__name h2{ 
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    padding-top: 10px;
+}
+.service__price{
+    font-size: 18px;
+    font-weight: 500;
+}
+.detail__button,.checkout__button{
+    background-color: #ee5253;
+    border: none;
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+.detail__button:hover,.checkout__button:hover{
+    background-color: #e91c1c;
+}

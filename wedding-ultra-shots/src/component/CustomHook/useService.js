@@ -6,7 +6,7 @@ const useService = () => {
         fetch('https://raw.githubusercontent.com/devmhimran/dummy-api/main/Service-APi/Service.json')
         .then(res => res.json())
         .then(data => setServices(data))
-    },[services]);
+    },[]);
     return [services, setServices];
 };
 
