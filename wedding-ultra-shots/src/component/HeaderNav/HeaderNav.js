@@ -1,13 +1,13 @@
 import React from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './HeaderNav.css'
-
+import './HeaderNav.css';
+import logo from '../../Assets/Wedding-Ultrashots-logo.png'
 const HeaderNav = () => {
     return (
         <Navbar className='header__nav' expand="lg">
             <Container>
-                <Navbar.Brand href="/">Wedding Ultrashots</Navbar.Brand>
+                <Navbar.Brand href="/"><img className='logo' src={logo} alt="" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto nav__link">

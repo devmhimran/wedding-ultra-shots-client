@@ -4,7 +4,6 @@ import './Service.css'
 
 const Service = (props) => {
     const {id, name, image, price} = props.service;
-    console.log(props.service);
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
