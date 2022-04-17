@@ -1,0 +1,36 @@
+.service__detail__component{
+    padding: 60px 0;
+    font-family: 'Raleway', sans-serif;
+}
+.service__detail__img{
+    padding: 30px;
+    background-color: #ee5253;
+    border-radius: 25px;
+}
+.service__detail__img img{
+    width: 100%;
+    border-radius: 20px;
+}
+.package__name h1{
+    font-size: 32px;
+    font-weight: 700;
+}
+.package__detail p{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 25px 0;
+}
+.price__main{
+    font-size: 24px;
+    font-weight: 500;
+    margin: 30px 0;
+}
+.checkout__button{
+    background-color: #ee5253;
+    border: none;
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+}

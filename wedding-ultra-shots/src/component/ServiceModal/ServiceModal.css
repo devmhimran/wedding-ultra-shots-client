@@ -5,12 +5,3 @@
 .modal-content{
     border-radius: 20px !important;
 }
-.checkout__button{
-    background-color: #ee5253;
-    border: none;
-    color: #fff;
-    padding: 10px 30px;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 5px;
-}
