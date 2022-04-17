@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ServiceModal from '../ServiceModal/ServiceModal';
 import './Service.css'
 
 const Service = (props) => {
     const {id, name, image, price} = props.service;
     console.log(props.service);
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+  
+    
     return (
         <div className='col-md-6 col-lg-4 col-12 py-5'>
             <div className="card service__card">
@@ -16,8 +22,9 @@ const Service = (props) => {
                         <p>BDT {price}</p>
                     </div>
                     <div className="service__detail__button">
-                        <button className='detail__button'>Detail</button>
+                        <button className='detail__button' onClick={handleShow}>Detail</button>
                         <button className='checkout__button mx-3'>Checkout</button>
+                        <ServiceModal key={id} handleClose={handleClose} show={show} detail={props.service}></ServiceModal>
                     </div>
                 </div>
             </div>
