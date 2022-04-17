@@ -10,6 +10,7 @@ import Footer from './component/Footer/Footer';
 import Login from './component/Login/Login';
 import Checkout from './component/Checkout/Checkout';
 import ServiceDetail from './component/ServiceDetail/ServiceDetail';
+import Register from './component/Register/Register';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/service/:serviceDetail' element={<ServiceDetail></ServiceDetail>}></Route>
         <Route path='/checkout' element={<Checkout></Checkout>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
         <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
       </Routes>
       <Footer></Footer>

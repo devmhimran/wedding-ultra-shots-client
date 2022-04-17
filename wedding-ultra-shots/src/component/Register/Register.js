@@ -1,30 +1,37 @@
 import React from 'react';
-import './Login.css';
 import { BsGoogle } from 'react-icons/bs';
 
-const Login = () => {
+const Register = () => {
     return (
         <div className='container'>
             <div className="login__form">
                 <div className="card">
                     <div className="card-body p-4">
                         <div className="form__titie">
-                            <h2>Sign in</h2>
+                            <h2>Sign up</h2>
                         </div>
                         <form>
                             <div className="input__form">
+                                <small>Enter Name</small>
+                                <input type="text" placeholder='John Doe' required/>
+                            </div>
+                            <div className="input__form">
                                 <small>Enter Email</small>
-                                <input type="email" placeholder='example@domain.com' required/>
+                                <input type="text" placeholder='example@domain.com' required/>
                             </div>
                             <div className="input__form">
                                 <small>Enter Password</small>
-                                <input type="text" placeholder='******' required/>
+                                <input type="text" placeholder='Your passowrd' required/>
                             </div>
                             <div className="input__form">
-                                <button className='signin__button'>Sign in</button>
+                                <small>Confirm Password</small>
+                                <input type="text" placeholder='Confirm passowrd' required/>
+                            </div>
+                            <div className="input__form">
+                                <button className='signin__button'>Sign up</button>
                             </div>
                             <div className="register__link mt-3">
-                                <p>New on Wedding Ultrashots? <a href='/register'>Register</a></p>
+                                <p>Already have account? <a href='/register'>Login</a></p>
                             </div>
                             <div className="divider  d-flex justify-content-center align-items-center py-3">
                                 <span></span>
@@ -42,4 +49,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
