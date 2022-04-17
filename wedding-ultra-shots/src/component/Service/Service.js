@@ -21,9 +21,9 @@ const Service = (props) => {
                     <div className="service__price">
                         <p>BDT {price}</p>
                     </div>
-                    <div className="service__detail__button">
+                    <div className="service__detail__button d-flex justify-content-between">
                         <button className='detail__button' onClick={handleShow}>Detail</button>
-                        <button className='checkout__button mx-3'>Checkout</button>
+                        <button className='checkout__button'>Checkout</button>
                         <ServiceModal key={id} handleClose={handleClose} show={show} detail={props.service}></ServiceModal>
                     </div>
                 </div>
