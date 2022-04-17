@@ -17,7 +17,7 @@ const Banner = () => {
         <div className="banner">
             <div className="hero__area">
                 <div className="banner__hero">
-                    <h1>Welcome to <br /> Wedding <br /> ultrashots</h1>
+                    <h1>Welcome to <br /> Wedding <br /> Ultrashots</h1>
                 </div>
             </div>
             <Carousel activeIndex={index} onSelect={handleSelect}>
