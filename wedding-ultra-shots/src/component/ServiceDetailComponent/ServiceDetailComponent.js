@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './ServiceDetailComponent.css';
 
 const ServiceDetailComponent = (props) => {
     const { id, name, image, price, photographer, time, light, print, print_paper } = props.data;
+    const navigate = useNavigate();
     return (
         <div className='container'>
             <div className=" service__detail__component">
@@ -25,7 +27,7 @@ const ServiceDetailComponent = (props) => {
                                 <p><b>Print: </b>{print}</p>
                                 <p><b>Print Paper: </b>{print_paper}</p>
                                 <p><b>Price: BDT </b><span className='price__main'>{price}</span></p>
-                                <button className='checkout__button'>Checkout</button>
+                            <button className='checkout__button'  onClick={()=> navigate('/checkout')}>Checkout</button>
                             </div>
                         </div>
                     </div>

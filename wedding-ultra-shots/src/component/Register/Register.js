@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import SocialRegister from '../SocialRegister/SocialRegister';
 
 const Register = () => {
@@ -11,6 +11,8 @@ const Register = () => {
     const confirmRef = useRef('');
     const [errorMsg, setErrorMsg] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
+    let loginError;
     const [sendEmailVerification, sending] = useSendEmailVerification(auth);
     const [
         createUserWithEmailAndPassword,
@@ -18,9 +20,14 @@ const Register = () => {
         loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
-      if(user){
-        navigate('/login');
-      }
+
+    let from = location.state?.from?.pathname || "/";
+    if (user) {
+        navigate(from, { replace: true });
+    }
+    if(error){
+        loginError = error.message;
+    }
     const handleRegister = async (e)=>{
         e.preventDefault();
         const name = nameRef.current.value;
@@ -62,7 +69,8 @@ const Register = () => {
                                 <small>Confirm Password</small>
                                 <input ref={confirmRef} type="password" placeholder='Confirm passowrd' required/>
                             </div>
-                            <small className='text-danger'>{errorMsg}</small>
+                            <small className='text-danger'>{errorMsg}</small><br />
+                            <small className='text-danger'>{loginError}</small>
                             <div className="input__form">
                                 <button className='signin__button' type='submit'>Sign up</button>
                             </div>
