@@ -10,6 +10,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     let navigate = useNavigate();
     let location = useLocation();
+    let errorMsg ;
 
     const handleEmail = (e) =>{
         setEmail(e.target.value)
@@ -25,7 +26,9 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
-
+    if(error){
+        errorMsg = error.message;
+    }
     if (user) {
         navigate(from, { replace: true });
     }
@@ -54,11 +57,13 @@ const Login = () => {
                                 <small>Enter Password</small>
                                 <input onBlur={handlePassword} type="password" placeholder='******' required />
                             </div>
+                            <small className='text-danger mt-2'>{errorMsg}</small>
                             <div className="input__form">
                                 <button className='signin__button'>Sign in</button>
                             </div>
                             <div className="register__link mt-3">
                                 <p>New on Wedding Ultrashots? <a href='/register'>Register</a></p>
+                                <p>Forget Password? <a href='/forget-password'>Click Here</a></p>
                             </div>
                             <div className="divider  d-flex justify-content-center align-items-center py-3">
                                 <span></span>

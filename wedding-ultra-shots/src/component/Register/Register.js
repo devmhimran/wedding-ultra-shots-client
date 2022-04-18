@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
-
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import { useNavigate } from 'react-router-dom';
 import SocialRegister from '../SocialRegister/SocialRegister';
@@ -12,6 +11,7 @@ const Register = () => {
     const confirmRef = useRef('');
     const [errorMsg, setErrorMsg] = useState('');
     const navigate = useNavigate();
+    const [sendEmailVerification, sending] = useSendEmailVerification(auth);
     const [
         createUserWithEmailAndPassword,
         user,
@@ -21,20 +21,21 @@ const Register = () => {
       if(user){
         navigate('/login');
       }
-    const handleRegister = (e)=>{
+    const handleRegister = async (e)=>{
         e.preventDefault();
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passRef.current.value;
         const confirmPassword = confirmRef.current.value;
         
+        
         console.log(name, email, password)
 
         if(password !== confirmPassword){
             setErrorMsg('Password not matched')
         }
-        createUserWithEmailAndPassword(email, password)
-
+        await createUserWithEmailAndPassword(email, password)
+        await sendEmailVerification();
     }
     return (
         <div className='container'>
@@ -74,9 +75,7 @@ const Register = () => {
                                 <span></span>
                             </div>
                             </form>
-                            <SocialRegister></SocialRegister>
-                            
-                        
+                            <SocialRegister></SocialRegister>    
                     </div>
                 </div>
             </div>

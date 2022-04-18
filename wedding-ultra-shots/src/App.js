@@ -12,6 +12,7 @@ import Checkout from './component/Checkout/Checkout';
 import ServiceDetail from './component/ServiceDetail/ServiceDetail';
 import Register from './component/Register/Register';
 import RequireAuth from './component/RequireAuth/RequireAuth';
+import PasswordReset from './component/PasswordReset/PasswordReset';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/forget-password' element={<PasswordReset></PasswordReset>}></Route>
         <Route path='/service/:serviceDetail' element={
           <RequireAuth>
             <ServiceDetail></ServiceDetail>

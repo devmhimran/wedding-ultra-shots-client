@@ -29,6 +29,9 @@
     font-weight: 500;
     border-radius: 5px;
 }
+.signin__button:hover{
+    background-color: #d92d2d;
+}
 /* .divider{
     display: ;
 } */
