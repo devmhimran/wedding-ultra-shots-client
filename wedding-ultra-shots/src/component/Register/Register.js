@@ -1,7 +1,36 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { BsGoogle } from 'react-icons/bs';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../firebase.init';
 
 const Register = () => {
+    const nameRef = useRef('');
+    const emailRef = useRef('');
+    const passRef = useRef('');
+    const confirmRef = useRef('');
+    const [errorMsg, setErrorMsg] = useState('');
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+
+    const handleRegister = (e)=>{
+        e.preventDefault();
+        const name = nameRef.current.value;
+        const email = emailRef.current.value;
+        const password = passRef.current.value;
+        const confirmPassword = confirmRef.current.value;
+        
+        console.log(name, email, password)
+
+        if(password !== confirmPassword){
+            setErrorMsg('Password not matched')
+        }
+        createUserWithEmailAndPassword(email, password)
+
+    }
     return (
         <div className='container'>
             <div className="login__form">
@@ -10,34 +39,36 @@ const Register = () => {
                         <div className="form__titie">
                             <h2>Sign up</h2>
                         </div>
-                        <form>
+                        <form onSubmit={handleRegister}>
                             <div className="input__form">
                                 <small>Enter Name</small>
-                                <input type="text" placeholder='John Doe' required/>
+                                <input ref={nameRef} type="text" placeholder='John Doe' required/>
                             </div>
                             <div className="input__form">
                                 <small>Enter Email</small>
-                                <input type="text" placeholder='example@domain.com' required/>
+                                <input ref={emailRef} type="text" placeholder='example@domain.com' required/>
                             </div>
                             <div className="input__form">
                                 <small>Enter Password</small>
-                                <input type="text" placeholder='Your passowrd' required/>
+                                <input ref={passRef} type="password" placeholder='Your passowrd' required/>
                             </div>
                             <div className="input__form">
                                 <small>Confirm Password</small>
-                                <input type="text" placeholder='Confirm passowrd' required/>
+                                <input ref={confirmRef} type="password" placeholder='Confirm passowrd' required/>
                             </div>
+                            <small className='text-danger'>{errorMsg}</small>
                             <div className="input__form">
-                                <button className='signin__button'>Sign up</button>
+                                <button className='signin__button' type='submit'>Sign up</button>
                             </div>
                             <div className="register__link mt-3">
-                                <p>Already have account? <a href='/register'>Login</a></p>
+                                <p>Already have account? <a href='/login'>Login</a></p>
                             </div>
                             <div className="divider  d-flex justify-content-center align-items-center py-3">
                                 <span></span>
                                     <p className='mx-4'>or</p>
                                 <span></span>
                             </div>
+                            
                             <div className="input__form">
                                 <button className='signin__button w-100'><BsGoogle></BsGoogle> <span>Google</span></button>
                             </div>
