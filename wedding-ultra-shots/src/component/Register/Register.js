@@ -1,7 +1,9 @@
 import React, { useRef, useState } from 'react';
-import { BsGoogle } from 'react-icons/bs';
+
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
+import { useNavigate } from 'react-router-dom';
+import SocialRegister from '../SocialRegister/SocialRegister';
 
 const Register = () => {
     const nameRef = useRef('');
@@ -9,13 +11,16 @@ const Register = () => {
     const passRef = useRef('');
     const confirmRef = useRef('');
     const [errorMsg, setErrorMsg] = useState('');
+    const navigate = useNavigate();
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
-
+      if(user){
+        navigate('/login');
+      }
     const handleRegister = (e)=>{
         e.preventDefault();
         const name = nameRef.current.value;
@@ -68,11 +73,10 @@ const Register = () => {
                                     <p className='mx-4'>or</p>
                                 <span></span>
                             </div>
+                            </form>
+                            <SocialRegister></SocialRegister>
                             
-                            <div className="input__form">
-                                <button className='signin__button w-100'><BsGoogle></BsGoogle> <span>Google</span></button>
-                            </div>
-                        </form>
+                        
                     </div>
                 </div>
             </div>
