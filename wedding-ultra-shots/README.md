@@ -1,3 +1,4 @@
+This is my project [Wedding Ultra Shots](https://wedding-ultra-shots.web.app/)
 ## Wedding Ultra Shots
 - Homepage with Carousel
 - Service Details with card view
@@ -6,4 +7,7 @@
 - About page , about myself. Blog page with some question
 
 ##Technology used
-- Js, Css,React Bootstrap, React Router, Firebase Hook, React Icon, Firebase
+- Js, Css,React Bootstrap, React Router, Firebase Hook, React Icon, Firebase, React Toastify
+
+
+
