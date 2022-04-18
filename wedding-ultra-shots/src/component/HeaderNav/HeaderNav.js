@@ -3,7 +3,16 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './HeaderNav.css';
 import logo from '../../Assets/Wedding-Ultrashots-logo.png'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth'
+import auth from '../firebase.init';
 const HeaderNav = () => {
+    const [user]= useAuthState(auth);
+    const logout = () => {
+        
+        signOut(auth);
+      };
+      
     return (
         <Navbar className='header__nav' expand="lg">
             <Container>
@@ -14,7 +23,11 @@ const HeaderNav = () => {
                         <Nav.Link as={Link} to="/home">Home</Nav.Link>
                         <Nav.Link as={Link} to="/about">About</Nav.Link>
                         <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
-                        <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                        {
+                            user ?
+                            <Nav.Link onClick={logout}>Logout</Nav.Link> :
+                            <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Container>
