@@ -1,5 +1,5 @@
 .banner{
-    height: 800px;
+    /* height: 800px; */
     position: relative;
 }
 .hero__area{
@@ -30,7 +30,7 @@
 }
 @media only screen and (max-width: 600px) {
     .banner__hero{
-        top: 32%;
+        top: 50%;
         padding: 20px 50px;
     }
     .banner__hero h1{

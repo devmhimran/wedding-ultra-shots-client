@@ -11,7 +11,7 @@ const Services = () => {
             <div className="container">
                 <h1 className='text-center'>Services</h1>
                 <div className='services__main__divider mx-auto'></div>
-                <div className="services__caar">
+                <div className="services__card py-5">
                     <div className="row">
                         {
                             services.map(service => <Service key={service.id} service={service}></Service>)
