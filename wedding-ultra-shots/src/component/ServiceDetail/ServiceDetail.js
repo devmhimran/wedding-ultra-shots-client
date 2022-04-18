@@ -10,7 +10,6 @@ const ServiceDetail = () => {
     const servicesData = services.find(serviceData => serviceData.id === serviceDetail);
     if(servicesData){
         serviceSaveData.push(servicesData);
-        console.log(serviceSaveData);
     }
 
 
