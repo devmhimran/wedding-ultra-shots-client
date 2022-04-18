@@ -3,9 +3,10 @@ import img from '../../Assets/error-gif.gif'
 
 const Blogs = () => {
     return (
-        <div>
-            <h1>Blogs</h1>
-            {/* <img src={img} alt="" /> */}
+        <div className='container'>
+           <div className="question-ans">
+            <h1>Difference between authorization and authentication</h1>
+           </div>
         </div>
     );
 };
