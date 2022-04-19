@@ -4,7 +4,7 @@ import React from 'react';
 const newsLetter = () => {
     return (
         <div className='container'>
-            <div className="subscribe__form mx-auto">
+            <div className="subscribe__form mx-auto py-5">
                 <h1 className='text-center'>Subscribe for latest update</h1>
                 <div className="card w-75 mx-auto">
                     <div className="card-body p-4">
