@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 
+// login page with social login
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

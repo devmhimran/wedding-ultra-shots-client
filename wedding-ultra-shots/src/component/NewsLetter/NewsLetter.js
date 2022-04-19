@@ -1,5 +1,6 @@
 import React from 'react';
 
+// newsletter section
 const newsLetter = () => {
     return (
         <div className='container'>

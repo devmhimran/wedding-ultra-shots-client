@@ -5,8 +5,11 @@ import NewsLetter from '../NewsLetter/NewsLetter'
 const Home = () => {
     return (
       <>
+        {/* banner or carousel */}
         <Banner></Banner>
+        {/* service section */}
         <Services></Services>
+        {/* newsletter section */}
         <NewsLetter></NewsLetter>
       </>
     );

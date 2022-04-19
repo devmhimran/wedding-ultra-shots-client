@@ -15,6 +15,7 @@ const PasswordReset = () => {
         await sendPasswordResetEmail(email);
         toast("Please Check Your Inbox!")
     }
+    // added password reset option
     return (
         <div className='container'>
             <div className="login__form">

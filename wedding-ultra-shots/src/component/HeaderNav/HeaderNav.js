@@ -9,10 +9,11 @@ import auth from '../firebase.init';
 const HeaderNav = () => {
     const [user]= useAuthState(auth);
     const logout = () => {
-        
+        // Added signout system
         signOut(auth);
       };
       
+    //   Header Navbar
     return (
         <Navbar className='header__nav' expand="lg">
             <Container>
